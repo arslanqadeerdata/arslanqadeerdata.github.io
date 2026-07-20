@@ -15,7 +15,7 @@ const spaceGrotesk = Space_Grotesk({
   display: "swap",
 });
 
-const siteUrl = "https://arslan-qadeer.vercel.app";
+const siteUrl = "https://arslanqadeerdata.github.io";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

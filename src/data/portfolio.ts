@@ -25,7 +25,7 @@ export const profile = {
   resumeUrl: "/resume.pdf",
   avatar: "/avatar.jpg", // Arslan's professional photo (public/avatar.jpg)
   socials: {
-    github: "https://github.com/arslan46-svg",
+    github: "https://github.com/arslanqadeerdata",
     // ↓ Replace with your real LinkedIn URL
     linkedin: "https://www.linkedin.com/in/arslan-qadeer",
     email: "mailto:arslanmagray25@gmail.com",
