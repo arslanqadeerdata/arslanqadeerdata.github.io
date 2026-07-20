@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="800" viewBox="0 0 640 800">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f1024"/>
+      <stop offset="1" stop-color="#151533"/>
+    </linearGradient>
+    <linearGradient id="ring" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3b82f6"/>
+      <stop offset="0.5" stop-color="#8b5cf6"/>
+      <stop offset="1" stop-color="#22d3ee"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="800" fill="url(#bg)"/>
+  <circle cx="320" cy="300" r="130" fill="none" stroke="url(#ring)" stroke-width="6" opacity="0.9"/>
+  <circle cx="320" cy="270" r="70" fill="#2a2a4a"/>
+  <path d="M200 470c0-66 54-110 120-110s120 44 120 110v40H200z" fill="#2a2a4a"/>
+  <text x="320" y="620" font-family="Segoe UI, Arial, sans-serif" font-size="120" font-weight="700" fill="url(#ring)" text-anchor="middle">AQ</text>
+  <text x="320" y="690" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#9ca3af" text-anchor="middle" letter-spacing="3">REPLACE WITH YOUR PHOTO</text>
+  <text x="320" y="726" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#6b7280" text-anchor="middle">/public/avatar.jpg</text>
+</svg>
