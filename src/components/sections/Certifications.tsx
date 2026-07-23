@@ -8,7 +8,7 @@ import SectionHeading from "@/components/ui/SectionHeading";
 
 export default function Certifications() {
   return (
-    <section className="section-pad !pt-0">
+    <section id="certifications" className="section-pad !pt-0">
       <SectionHeading
         eyebrow="Certifications"
         title="Credentials & continuous learning"
