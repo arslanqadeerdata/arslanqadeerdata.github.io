@@ -19,7 +19,7 @@ export default function Certifications() {
         initial="hidden"
         whileInView="show"
         viewport={viewportOnce}
-        className="grid grid-cols-1 gap-5 sm:grid-cols-3"
+        className="mx-auto grid max-w-3xl grid-cols-1 gap-5 sm:grid-cols-2"
       >
         {certifications.map((c) => {
           const inProgress = c.status.toLowerCase().includes("progress");

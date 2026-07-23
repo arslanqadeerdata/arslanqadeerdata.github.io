@@ -122,6 +122,19 @@ export const experience: ExperienceItem[] = [
       "Basic SEMrush reporting",
     ],
   },
+  {
+    role: "Internship (8 Weeks)",
+    company: "PIA — Pakistan International Airlines",
+    period: "8 Weeks",
+    domain: "Aviation / IT",
+    summary:
+      "Completed an 8-week professional internship, gaining hands-on exposure to a corporate work environment.",
+    points: [
+      "Real-world industry & workplace experience",
+      "Professional team collaboration & communication",
+      "Practical exposure to organizational workflows",
+    ],
+  },
 ];
 
 export type Project = {
@@ -240,7 +253,6 @@ export const tools = [
 
 export const certifications = [
   { name: "NAVTTC Digital Marketing & SEO", issuer: "NAVTTC", status: "Completed" },
-  { name: "PIA Internship", issuer: "PIA", status: "8 Weeks" },
   { name: "DigiSkills Data Analytics", issuer: "DigiSkills", status: "In Progress" },
 ];
 
