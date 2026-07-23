@@ -4,25 +4,34 @@ import { useEffect, useState } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 
 /**
- * Custom cursor + glow.
- *  - a small solid dot that tracks precisely
- *  - a larger springy ring that lags behind
- *  - grows over interactive elements
- * Disabled automatically on touch / coarse-pointer devices.
+ * Custom animated cursor that glides with the mouse:
+ *  - a bright dot that tracks the pointer precisely
+ *  - a larger ring that springs/lags behind for a smooth "trail" feel
+ *  - a soft glow behind everything
+ *  - grows and fills when hovering links / buttons
+ * Automatically disabled on touch / coarse-pointer devices and for
+ * users who prefer reduced motion.
  */
 export default function CustomCursor() {
   const [enabled, setEnabled] = useState(false);
   const [hovering, setHovering] = useState(false);
+  const [down, setDown] = useState(false);
   const [hidden, setHidden] = useState(true);
 
   const x = useMotionValue(-100);
   const y = useMotionValue(-100);
-  const ringX = useSpring(x, { stiffness: 250, damping: 28, mass: 0.6 });
-  const ringY = useSpring(y, { stiffness: 250, damping: 28, mass: 0.6 });
+
+  // ring lags a little behind the dot → visible movement/trail
+  const ringX = useSpring(x, { stiffness: 300, damping: 26, mass: 0.5 });
+  const ringY = useSpring(y, { stiffness: 300, damping: 26, mass: 0.5 });
+  // glow lags even more for a soft comet feel
+  const glowX = useSpring(x, { stiffness: 120, damping: 20, mass: 0.8 });
+  const glowY = useSpring(y, { stiffness: 120, damping: 20, mass: 0.8 });
 
   useEffect(() => {
     const fine = window.matchMedia("(pointer: fine)").matches;
-    if (!fine) return;
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!fine || reduce) return;
     setEnabled(true);
     document.body.classList.add("custom-cursor");
 
@@ -38,13 +47,19 @@ export default function CustomCursor() {
       );
     };
     const leave = () => setHidden(true);
+    const downFn = () => setDown(true);
+    const upFn = () => setDown(false);
 
     window.addEventListener("mousemove", move);
     window.addEventListener("mouseover", over);
+    window.addEventListener("mousedown", downFn);
+    window.addEventListener("mouseup", upFn);
     document.addEventListener("mouseleave", leave);
     return () => {
       window.removeEventListener("mousemove", move);
       window.removeEventListener("mouseover", over);
+      window.removeEventListener("mousedown", downFn);
+      window.removeEventListener("mouseup", upFn);
       document.removeEventListener("mouseleave", leave);
       document.body.classList.remove("custom-cursor");
     };
@@ -52,27 +67,36 @@ export default function CustomCursor() {
 
   if (!enabled) return null;
 
+  const base = "pointer-events-none fixed left-0 top-0 -translate-x-1/2 -translate-y-1/2 rounded-full";
+
   return (
     <>
-      {/* precise dot */}
+      {/* soft glow (slowest) */}
       <motion.div
-        className="pointer-events-none fixed left-0 top-0 z-[9999] h-2 w-2 rounded-full bg-white mix-blend-difference"
-        style={{ x, y, translateX: "-50%", translateY: "-50%" }}
-        animate={{ opacity: hidden ? 0 : 1, scale: hovering ? 0.4 : 1 }}
-        transition={{ duration: 0.15 }}
+        className={`${base} z-[9997] h-16 w-16 bg-accent-violet/25 blur-2xl`}
+        style={{ x: glowX, y: glowY }}
+        animate={{ opacity: hidden ? 0 : 1, scale: hovering ? 1.6 : 1 }}
+        transition={{ duration: 0.25 }}
       />
-      {/* lagging ring / glow */}
+
+      {/* trailing ring */}
       <motion.div
-        className="pointer-events-none fixed left-0 top-0 z-[9998] h-9 w-9 rounded-full border border-accent-violet/70"
-        style={{ x: ringX, y: ringY, translateX: "-50%", translateY: "-50%" }}
+        className={`${base} z-[9998] h-9 w-9 border-2 border-accent-violet`}
+        style={{ x: ringX, y: ringY, boxShadow: "0 0 14px rgba(139,92,246,0.7)" }}
         animate={{
           opacity: hidden ? 0 : 1,
-          scale: hovering ? 1.8 : 1,
-          backgroundColor: hovering
-            ? "rgba(139,92,246,0.15)"
-            : "rgba(139,92,246,0)",
+          scale: down ? 0.8 : hovering ? 1.9 : 1,
+          backgroundColor: hovering ? "rgba(139,92,246,0.18)" : "rgba(139,92,246,0)",
         }}
         transition={{ duration: 0.2 }}
+      />
+
+      {/* precise bright dot */}
+      <motion.div
+        className={`${base} z-[9999] h-2.5 w-2.5 bg-white`}
+        style={{ x, y, boxShadow: "0 0 10px rgba(255,255,255,0.9)" }}
+        animate={{ opacity: hidden ? 0 : 1, scale: hovering ? 0.5 : 1 }}
+        transition={{ duration: 0.12 }}
       />
     </>
   );
