@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+
+Host: https://arslanqadeerdata.github.io
+Sitemap: https://arslanqadeerdata.github.io/sitemap.xml
