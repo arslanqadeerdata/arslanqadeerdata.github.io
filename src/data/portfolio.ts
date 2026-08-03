@@ -146,6 +146,7 @@ export type Project = {
   description: string;
   analysis?: string[];
   tag: string;
+  href?: string;
 };
 
 export const featuredProject: Project = {
@@ -170,6 +171,15 @@ export const featuredProject: Project = {
 };
 
 export const academicProjects: Project[] = [
+  {
+    name: "Chacha Dutch — Trip Expense Splitter",
+    status: "Mobile App • In Progress",
+    tag: "React Native",
+    tools: ["React Native", "Expo", "TypeScript", "Firebase", "Firestore"],
+    description:
+      "A multi-user Android app for splitting group-trip expenses, with shared trips, invite links, offline caching, receipt scanning, and recipient-confirmed settlements.",
+    href: "https://github.com/arslanqadeerdata/ChachaDutch",
+  },
   {
     name: "Hospital Online Appointment App",
     status: "UI/UX Prototype",
