@@ -50,10 +50,9 @@ export default function Hero() {
             variants={fadeUp}
             className="mt-6 font-display text-4xl font-bold leading-[1.05] tracking-tight text-white sm:text-6xl lg:text-7xl"
           >
-            Hi, I&apos;m{" "}
             <span className="gradient-text animate-gradient-x">Arslan Qadeer</span>
             <br />
-            <span className="text-gray-300">Data Analyst</span>
+            <span className="text-gray-300">Data Analyst &amp; Power BI Specialist</span>
           </motion.h1>
 
           <motion.p
@@ -135,7 +134,7 @@ export default function Hero() {
             {/* Profile image — replace /public/avatar.jpg. Falls back to monogram. */}
             <Image
               src={profile.avatar}
-              alt={profile.name}
+              alt="Arslan Qadeer, Data Analyst and Power BI Specialist"
               fill
               priority
               sizes="(max-width: 768px) 90vw, 420px"

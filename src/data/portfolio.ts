@@ -8,10 +8,10 @@
 
 export const profile = {
   name: "Arslan Qadeer",
-  title: "Data Analyst",
-  headline: "Transforming Raw Business Data into Actionable Insights",
+  title: "Data Analyst & Power BI Specialist",
+  headline: "Data Analyst Turning Business Data into Actionable Insights",
   subheadline:
-    "BS Computer Science student turning complex business data into clear, decision-ready dashboards with SQL, PostgreSQL, Power Query & Power BI.",
+    "Based in Pakistan, I turn complex business data into clear, decision-ready dashboards with SQL, PostgreSQL, Power Query and Power BI.",
   location: "Rawalpindi / Islamabad, Pakistan",
   email: "arslanmagray25@gmail.com",
   phones: ["0343 1134156", "0313 1774156"],

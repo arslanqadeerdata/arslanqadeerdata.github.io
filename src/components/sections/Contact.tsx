@@ -141,6 +141,7 @@ export default function Contact() {
         >
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
             <Field
+              id="contact-name"
               label="Your Name"
               value={form.name}
               onChange={(v) => setForm((f) => ({ ...f, name: v }))}
@@ -148,6 +149,7 @@ export default function Contact() {
               required
             />
             <Field
+              id="contact-email"
               label="Email"
               type="email"
               value={form.email}
@@ -158,8 +160,10 @@ export default function Contact() {
           </div>
 
           <div className="mt-5">
-            <label className="mb-1.5 block text-sm font-medium text-gray-300">Message</label>
+            <label htmlFor="contact-message" className="mb-1.5 block text-sm font-medium text-gray-300">Message</label>
             <textarea
+              id="contact-message"
+              name="message"
               required
               rows={5}
               value={form.message}
@@ -185,6 +189,7 @@ export default function Contact() {
 }
 
 function Field({
+  id,
   label,
   value,
   onChange,
@@ -192,6 +197,7 @@ function Field({
   type = "text",
   required,
 }: {
+  id: string;
   label: string;
   value: string;
   onChange: (v: string) => void;
@@ -201,8 +207,10 @@ function Field({
 }) {
   return (
     <div>
-      <label className="mb-1.5 block text-sm font-medium text-gray-300">{label}</label>
+      <label htmlFor={id} className="mb-1.5 block text-sm font-medium text-gray-300">{label}</label>
       <input
+        id={id}
+        name={id}
         type={type}
         required={required}
         value={value}
