@@ -119,10 +119,22 @@ export default function Projects() {
                 <span className="rounded-lg bg-white/5 px-2.5 py-1 text-xs font-medium text-accent-violet">
                   {p.tag}
                 </span>
-                <ArrowUpRight
-                  size={18}
-                  className="text-gray-500 transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-white"
-                />
+                {p.href ? (
+                  <a
+                    href={p.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={`View ${p.name} on GitHub`}
+                    className="text-gray-500 transition-all hover:-translate-y-0.5 hover:translate-x-0.5 hover:text-white"
+                  >
+                    <ArrowUpRight size={18} />
+                  </a>
+                ) : (
+                  <ArrowUpRight
+                    size={18}
+                    className="text-gray-500 transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-white"
+                  />
+                )}
               </div>
               <h4 className="font-display text-lg font-bold text-white">{p.name}</h4>
               <p className="mt-2 flex-1 text-sm leading-relaxed text-gray-400">{p.description}</p>
@@ -136,6 +148,16 @@ export default function Projects() {
                   </span>
                 ))}
               </div>
+              {p.href ? (
+                <a
+                  href={p.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-accent-cyan transition-colors hover:text-white"
+                >
+                  View source <ArrowUpRight size={15} />
+                </a>
+              ) : null}
             </motion.article>
           ))}
         </motion.div>
