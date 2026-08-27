@@ -40,6 +40,13 @@ export const metadata: Metadata = {
   publisher: profile.name,
   category: "Data analytics portfolio",
   alternates: { canonical: "/" },
+  manifest: "/site.webmanifest",
+  referrer: "strict-origin-when-cross-origin",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -134,12 +141,30 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         mainEntity: { "@id": `${siteUrl}/#person` },
         inLanguage: "en",
       },
+      {
+        "@type": "WebPage",
+        "@id": `${siteUrl}/#homepage`,
+        url: siteUrl,
+        name: `${profile.name} | Data Analyst & Power BI Portfolio`,
+        description:
+          "Portfolio of Arslan Qadeer, a Data Analyst in Pakistan specializing in SQL, PostgreSQL, Excel, Power Query and Power BI.",
+        isPartOf: { "@id": `${siteUrl}/#website` },
+        about: { "@id": `${siteUrl}/#person` },
+        primaryImageOfPage: `${siteUrl}/opengraph-image.png`,
+        inLanguage: "en",
+      },
     ],
   };
 
   return (
     <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`}>
       <body className="bg-base-950 text-gray-200 antialiased">
+        <a
+          href="#main-content"
+          className="skip-link"
+        >
+          Skip to main content
+        </a>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}

@@ -25,6 +25,29 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+:focus-visible {
+  outline: 2px solid #67e8f9;
+  outline-offset: 4px;
+}
+
+.skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 300;
+  transform: translateY(-200%);
+  border-radius: 0.75rem;
+  background: #fff;
+  padding: 0.75rem 1rem;
+  color: #111827;
+  font-weight: 700;
+  transition: transform 0.2s ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
 /* Hide native cursor on devices that support the custom one (pointer:fine) */
 @media (pointer: fine) {
   body.custom-cursor,

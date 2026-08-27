@@ -1,0 +1,16 @@
+{
+  "name": "Arslan Qadeer | Data Analyst & Power BI Portfolio",
+  "short_name": "Arslan Qadeer",
+  "description": "Portfolio of Arslan Qadeer, a Data Analyst specializing in SQL, Power BI and business intelligence.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#050510",
+  "theme_color": "#050510",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

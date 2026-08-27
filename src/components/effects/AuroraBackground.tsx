@@ -1,5 +1,3 @@
-"use client";
-
 /**
  * Fixed, full-viewport premium backdrop:
  *  - deep base gradient

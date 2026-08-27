@@ -1,9 +1,5 @@
 import AuroraBackground from "@/components/effects/AuroraBackground";
-import CustomCursor from "@/components/effects/CustomCursor";
-import ScrollProgress from "@/components/effects/ScrollProgress";
-import LoadingScreen from "@/components/effects/LoadingScreen";
-import SmoothScroll from "@/components/effects/SmoothScroll";
-import FloatingWhatsApp from "@/components/effects/FloatingWhatsApp";
+import DeferredEnhancements from "@/components/effects/DeferredEnhancements";
 
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -22,17 +18,12 @@ import Contact from "@/components/sections/Contact";
 export default function Home() {
   return (
     <>
-      {/* global effects */}
-      <LoadingScreen />
       <AuroraBackground />
-      <CustomCursor />
-      <ScrollProgress />
-      <SmoothScroll />
-      <FloatingWhatsApp />
+      <DeferredEnhancements />
 
       <Navbar />
 
-      <main className="relative">
+      <main id="main-content" tabIndex={-1} className="relative scroll-mt-24 outline-none">
         <Hero />
         <Stats />
         <About />

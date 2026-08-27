@@ -1,5 +1,3 @@
-"use client";
-
 import { ArrowUp, Mail, MapPin } from "lucide-react";
 import { FaGithub, FaLinkedinIn, FaWhatsapp } from "react-icons/fa6";
 import { profile, navLinks, whatsappLink } from "@/data/portfolio";
