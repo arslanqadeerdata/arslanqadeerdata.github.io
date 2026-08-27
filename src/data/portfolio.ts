@@ -84,6 +84,7 @@ export type ExperienceItem = {
   period: string;
   domain: string;
   current?: boolean;
+  certificateUrl?: string;
   summary: string;
   points: string[];
 };
@@ -126,8 +127,9 @@ export const experience: ExperienceItem[] = [
   {
     role: "Internship (8 Weeks)",
     company: "PIA — Pakistan International Airlines",
-    period: "8 Weeks",
+    period: "16 Jun – 8 Aug 2025",
     domain: "Aviation / IT",
+    certificateUrl: "/pia-internship-certificate.jpeg",
     summary:
       "Completed an 8-week professional internship, gaining hands-on exposure to a corporate work environment.",
     points: [

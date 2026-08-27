@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Briefcase, CheckCircle2, Building2 } from "lucide-react";
+import { Briefcase, CheckCircle2, Building2, ExternalLink } from "lucide-react";
 import { experience } from "@/data/portfolio";
 import { fadeUp, staggerContainer, viewportOnce } from "@/lib/motion";
 import SectionHeading from "@/components/ui/SectionHeading";
@@ -79,6 +79,17 @@ export default function Experience() {
                       </li>
                     ))}
                   </ul>
+
+                  {exp.certificateUrl && (
+                    <a
+                      href={exp.certificateUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-5 inline-flex items-center gap-2 rounded-xl border border-accent-cyan/30 bg-accent-cyan/10 px-4 py-2.5 text-sm font-semibold text-accent-cyan transition-colors hover:border-accent-cyan hover:bg-accent-cyan/20 hover:text-white"
+                    >
+                      View PIA internship certificate <ExternalLink size={15} />
+                    </a>
+                  )}
                 </motion.div>
               </motion.div>
             );
