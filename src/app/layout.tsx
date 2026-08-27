@@ -15,15 +15,17 @@ const siteUrl = "https://arslanqadeerdata.github.io";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: `${profile.name} | Data Analyst & Power BI Portfolio`,
+    default: `${profile.name} | Data Analyst & Power BI Developer Pakistan`,
     template: `%s | ${profile.name}`,
   },
   description:
-    "Arslan Qadeer is a Data Analyst in Pakistan specializing in SQL, PostgreSQL, Excel, Power Query and Power BI dashboards for clearer business decisions.",
+    "Arslan Qadeer is a Data Analyst in Rawalpindi and Islamabad, Pakistan. Explore his SQL, Power BI and business intelligence portfolio.",
   applicationName: `${profile.name} Portfolio`,
   keywords: [
     "Data Analyst",
     "Data Analyst Pakistan",
+    "Data Analyst Rawalpindi",
+    "Data Analyst Islamabad",
     "Power BI Developer Pakistan",
     "Business Intelligence",
     "Power BI",
@@ -34,6 +36,7 @@ export const metadata: Metadata = {
     "Data Visualization",
     "Arslan Qadeer",
     "Data Analyst Portfolio",
+    "SQL Power BI Portfolio Pakistan",
   ],
   authors: [{ name: profile.name }],
   creator: profile.name,
@@ -51,9 +54,9 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: siteUrl,
-    title: `${profile.name} | Data Analyst & Power BI Portfolio`,
+    title: `${profile.name} | Data Analyst & Power BI Developer Pakistan`,
     description:
-      "Data Analyst specializing in SQL, PostgreSQL, Excel, Power Query and Power BI dashboards.",
+      "Data Analyst in Rawalpindi and Islamabad, Pakistan, specializing in SQL, Excel, Power Query and Power BI dashboards.",
     siteName: `${profile.name} Portfolio`,
     images: [
       {
@@ -66,9 +69,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${profile.name} | Data Analyst & Power BI Portfolio`,
+    title: `${profile.name} | Data Analyst & Power BI Developer Pakistan`,
     description:
-      "Data Analyst specializing in SQL, PostgreSQL, Excel, Power Query and Power BI dashboards.",
+      "Data Analyst in Rawalpindi and Islamabad, Pakistan, specializing in SQL, Excel, Power Query and Power BI dashboards.",
     images: ["/opengraph-image.png"],
   },
   robots: {
@@ -99,7 +102,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         "@id": `${siteUrl}/#person`,
         name: profile.name,
         jobTitle: profile.title,
-        description: profile.headline,
+        description:
+          "Arslan Qadeer is a Data Analyst in Rawalpindi and Islamabad, Pakistan, specializing in SQL, Power BI and business intelligence.",
         image: `${siteUrl}${profile.avatar}`,
         email: profile.email,
         telephone: `+${profile.whatsapp.number}`,
@@ -109,6 +113,11 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           addressRegion: "Islamabad Capital Territory",
           addressCountry: "PK",
         },
+        areaServed: [
+          { "@type": "City", name: "Rawalpindi" },
+          { "@type": "City", name: "Islamabad" },
+          { "@type": "Country", name: "Pakistan" },
+        ],
         url: siteUrl,
         sameAs: [profile.socials.github, profile.socials.linkedin],
         knowsAbout: [
@@ -126,9 +135,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         "@type": "WebSite",
         "@id": `${siteUrl}/#website`,
         url: siteUrl,
-        name: `${profile.name} | Data Analyst Portfolio`,
+        name: `${profile.name} | Data Analyst & Power BI Portfolio`,
         description:
-          "Data analytics portfolio featuring SQL, Power BI, Excel and business-intelligence work.",
+          "SQL and Power BI portfolio of a Data Analyst serving Rawalpindi, Islamabad and Pakistan.",
         inLanguage: "en",
         publisher: { "@id": `${siteUrl}/#person` },
       },
@@ -136,7 +145,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         "@type": "ProfilePage",
         "@id": `${siteUrl}/#webpage`,
         url: siteUrl,
-        name: `${profile.name} | Data Analyst & Power BI Portfolio`,
+        name: `${profile.name} | Data Analyst & Power BI Developer Pakistan`,
         isPartOf: { "@id": `${siteUrl}/#website` },
         mainEntity: { "@id": `${siteUrl}/#person` },
         inLanguage: "en",
@@ -145,9 +154,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         "@type": "WebPage",
         "@id": `${siteUrl}/#homepage`,
         url: siteUrl,
-        name: `${profile.name} | Data Analyst & Power BI Portfolio`,
+        name: `${profile.name} | Data Analyst & Power BI Developer Pakistan`,
         description:
-          "Portfolio of Arslan Qadeer, a Data Analyst in Pakistan specializing in SQL, PostgreSQL, Excel, Power Query and Power BI.",
+          "Portfolio of Arslan Qadeer, a Data Analyst in Rawalpindi and Islamabad, Pakistan, specializing in SQL, PostgreSQL, Excel, Power Query and Power BI.",
         isPartOf: { "@id": `${siteUrl}/#website` },
         about: { "@id": `${siteUrl}/#person` },
         primaryImageOfPage: `${siteUrl}/opengraph-image.png`,

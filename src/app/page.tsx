@@ -14,6 +14,7 @@ import Services from "@/components/sections/Services";
 import Certifications from "@/components/sections/Certifications";
 import CareerGoal from "@/components/sections/CareerGoal";
 import Contact from "@/components/sections/Contact";
+import LocalExpertise from "@/components/sections/LocalExpertise";
 
 export default function Home() {
   return (
@@ -33,6 +34,7 @@ export default function Home() {
         <Services />
         <Certifications />
         <CareerGoal />
+        <LocalExpertise />
         <Contact />
       </main>
 
