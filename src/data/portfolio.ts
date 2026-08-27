@@ -85,6 +85,7 @@ export type ExperienceItem = {
   domain: string;
   current?: boolean;
   certificateUrl?: string;
+  credentialLabel?: string;
   summary: string;
   points: string[];
 };
@@ -114,6 +115,8 @@ export const experience: ExperienceItem[] = [
     company: "Search Engine Empire",
     period: "3 Months",
     domain: "Digital Marketing & SEO",
+    certificateUrl: "/seo-internship-offer-letter.jpeg",
+    credentialLabel: "View SEO internship offer letter",
     summary:
       "Improved on-page performance and search visibility using data-driven SEO tooling.",
     points: [
@@ -130,6 +133,7 @@ export const experience: ExperienceItem[] = [
     period: "16 Jun – 8 Aug 2025",
     domain: "Aviation / IT",
     certificateUrl: "/pia-internship-certificate.jpeg",
+    credentialLabel: "View PIA internship certificate",
     summary:
       "Completed an 8-week professional internship, gaining hands-on exposure to a corporate work environment.",
     points: [

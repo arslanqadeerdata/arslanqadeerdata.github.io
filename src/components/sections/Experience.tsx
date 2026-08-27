@@ -87,7 +87,7 @@ export default function Experience() {
                       rel="noopener noreferrer"
                       className="mt-5 inline-flex items-center gap-2 rounded-xl border border-accent-cyan/30 bg-accent-cyan/10 px-4 py-2.5 text-sm font-semibold text-accent-cyan transition-colors hover:border-accent-cyan hover:bg-accent-cyan/20 hover:text-white"
                     >
-                      View PIA internship certificate <ExternalLink size={15} />
+                      {exp.credentialLabel ?? "View internship certificate"} <ExternalLink size={15} />
                     </a>
                   )}
                 </motion.div>
